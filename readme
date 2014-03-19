@@ -1,0 +1,11 @@
+# the code is only tested with raspian - debian for  raspberrry pi
+
+# In order to run the script
+  - copy files into  /usr/local/bin
+  - copy wenv.default.sh into wenv.sh
+       - cp wenv.default.sh wenv.sh
+  - Update the parms to reflect your site environment
+  - scripts provided 
+      - wnet_ping.sh 192.168.1.2   for connectivity testing
+  
+      - wnet_scan.sh for network scan
