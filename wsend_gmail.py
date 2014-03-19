@@ -1,7 +1,6 @@
 #!/usr/bin/env python
 # cmd format wsend_gmail.sh send_from passwd sendto message
 #./wsend_gmail.py sendfrom passwd sendto message
-5
 
 import smtplib
 import sys
@@ -27,8 +26,6 @@ msg = MIMEText(MESS)
 msg['Subject'] = MARK + MESS 
 msg['From'] = USERNAME
 msg['To'] = MAILTO
-print (msg)
-#sys.exit()
 
 server = smtplib.SMTP('smtp.gmail.com:587')
 server.ehlo_or_helo_if_needed()

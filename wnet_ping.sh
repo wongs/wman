@@ -1,5 +1,4 @@
-#!/bin/sh
-set -xv
+#!/bin/bash
 # format wnetping.sh ip_addr
 
 # set variable
@@ -10,8 +9,8 @@ source /usr/local/bin/wenv.sh
 WEBCAM_IP=$1
 STATUS="/tmp/$WEBCAM_IP.status"
 
-echo " basic test for $WEBCAM_IP  "  
-/bin/ping -c 1 -w 1  $WEBCAM_IP  >  /dev/null
+echo " $DATE - ping test ok for $WEBCAM_IP  "  
+/bin/ping -c 3  $WEBCAM_IP  >  /dev/null
 
 RES1=`echo $?`
  
@@ -23,12 +22,11 @@ if [  "$RES1" -ne  0 ]
         echo " $DATE message already send $WEBCAM_IP"
      else
         touch $STATUS
-        echo "send message regarding $WEBCAM_Ip"
-        wsend_gmail.py   koodoman21@gmail.com aixtools koodoman22@gmail.com "DOWN_$WEBCAM_IP"
+        echo "send $WEBCAM_IP down msg to $SENDTO"
+        wsend_gmail.py  $SENDTO $GMAIL_PASSWD $SENDTO "DOWN_$WEBCAM_IP"
 
        fi
      else
-     echo   "$DATE $WEBCAM_IP is alive" 
      rm $STATUS
 
  fi

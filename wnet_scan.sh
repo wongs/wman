@@ -1,16 +1,14 @@
 #!/bin/bash
-set -xv
+#set -xv
 # func: scan network, and id the machine
  
-# init
+# init 1
 source /usr/local/bin/wenv.sh
 
-# init
+# init 2
 SCRIPT=`basename $0`
 #echo "date is $DATE"
  
-cp /dev/null   /$TMPDIR/$SCRIPT.out
-
 # scan the subnet
 for DEV in {1..254}
    do
